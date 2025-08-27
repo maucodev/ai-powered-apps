@@ -1,5 +1,5 @@
 import { FaArrowUp } from 'react-icons/fa';
-import { set, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import axios from 'axios';
 
 import { Button } from './ui/button';
@@ -13,15 +13,20 @@ type ChatResponse = {
     message: string;
 };
 
+type Message = {
+    content: string;
+    role: 'user' | 'bot';
+};
+
 const ChatBox = () => {
-    const [messages, setMessages] = useState<string[]>([]);
+    const [messages, setMessages] = useState<Message[]>([]);
     const conversationId = useRef(crypto.randomUUID());
     const { register, handleSubmit, reset, formState } = useForm<FormData>();
 
     const onSubmit = async ({ prompt }: FormData) => {
         prompt = prompt.trim();
 
-        setMessages((prev) => [...prev, prompt]);
+        setMessages((prev) => [...prev, { content: prompt, role: 'user' }]);
 
         reset();
 
@@ -30,7 +35,10 @@ const ChatBox = () => {
             conversationId: conversationId.current,
         });
 
-        setMessages((prev) => [...prev, data.message]);
+        setMessages((prev) => [
+            ...prev,
+            { content: data.message, role: 'bot' },
+        ]);
     };
 
     const onKeyDown = (e: React.KeyboardEvent<HTMLFormElement>) => {
@@ -42,9 +50,18 @@ const ChatBox = () => {
 
     return (
         <div>
-            <div>
+            <div className="flex flex-col gap-3 mb-10">
                 {messages.map((message, index) => (
-                    <p key={index}>{message}</p>
+                    <p
+                        key={index}
+                        className={`px-3 py-1 rounded-xl ${
+                            message.role === 'user'
+                                ? 'text-white bg-blue-600 self-end'
+                                : 'text-black bg-gray-100 self-start'
+                        }`}
+                    >
+                        {message.content}
+                    </p>
                 ))}
             </div>
             <form
