@@ -22,6 +22,7 @@ type Message = {
 const ChatBox = () => {
     const [messages, setMessages] = useState<Message[]>([]);
     const [isBotTyping, setIsBotTyping] = useState(false);
+    const [error, setError] = useState('');
     const lastMessageRef = useRef<HTMLDivElement | null>(null);
     const conversationId = useRef(crypto.randomUUID());
     const { register, handleSubmit, reset, formState } = useForm<FormData>();
@@ -31,25 +32,32 @@ const ChatBox = () => {
     }, [messages]);
 
     const onSubmit = async ({ prompt }: FormData) => {
-        prompt = prompt.trim();
+        try {
+            prompt = prompt.trim();
 
-        setMessages((prev) => [...prev, { content: prompt, role: 'user' }]);
+            setMessages((prev) => [...prev, { content: prompt, role: 'user' }]);
 
-        setIsBotTyping(true);
+            setIsBotTyping(true);
 
-        reset({ prompt: '' });
+            setError('');
 
-        const { data } = await axios.post<ChatResponse>('/api/chat', {
-            prompt: prompt,
-            conversationId: conversationId.current,
-        });
+            reset({ prompt: '' });
 
-        setMessages((prev) => [
-            ...prev,
-            { content: data.message, role: 'bot' },
-        ]);
+            const { data } = await axios.post<ChatResponse>('/api/chat', {
+                prompt: prompt,
+                conversationId: conversationId.current,
+            });
 
-        setIsBotTyping(false);
+            setMessages((prev) => [
+                ...prev,
+                { content: data.message, role: 'bot' },
+            ]);
+        } catch (error) {
+            console.error(error);
+            setError('Something went wrong. Please try again later.');
+        } finally {
+            setIsBotTyping(false);
+        }
     };
 
     const onKeyDown = (e: React.KeyboardEvent<HTMLFormElement>) => {
@@ -94,6 +102,11 @@ const ChatBox = () => {
                         <div className="w-2 h-2 rounded-full bg-gray-800 animate-pulse"></div>
                         <div className="w-2 h-2 rounded-full bg-gray-800 animate-pulse [animation-delay:0.2s]"></div>
                         <div className="w-2 h-2 rounded-full bg-gray-800 animate-pulse [animation-delay:0.4s]"></div>
+                    </div>
+                )}
+                {error && (
+                    <div className="text-red-600 font-medium text-center">
+                        {error}
                     </div>
                 )}
             </div>
