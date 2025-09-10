@@ -1,11 +1,9 @@
 import fs from 'fs';
 import path from 'path';
-import OpenAI from 'openai';
 
 import { conversationRespository } from '../repositories/conversation.repository';
 import template from '../prompts/chatbox.txt';
-
-const client = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+import { llmClient } from '../llm/client';
 
 const parkInfo = fs.readFileSync(
     path.join(__dirname, '..', 'prompts', 'WonderWorld.md'),
@@ -24,13 +22,13 @@ export const chatService = {
         prompt: string,
         conversationId: string
     ): Promise<ChatResponse> {
-        const response = await client.responses.create({
+        const response = await llmClient.generateText({
             model: 'gpt-4o-mini',
             instructions,
-            input: prompt,
+            prompt,
             temperature: 0.2,
-            max_output_tokens: 100,
-            previous_response_id:
+            maxTokens: 100,
+            previousResponseId:
                 conversationRespository.getLastResponseId(conversationId),
         });
 
@@ -38,7 +36,7 @@ export const chatService = {
 
         return {
             id: response.id,
-            message: response.output_text,
+            message: response.text,
         };
     },
 };
