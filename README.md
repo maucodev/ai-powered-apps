@@ -25,7 +25,44 @@ To install dependencies:
 bun install
 ```
 
-To run the application:
+## Database Setup
+
+This project uses MySQL as the database and Prisma as the ORM.
+
+1. Ensure you have MySQL installed and running on your local machine. You can download it from [MySQL official website](https://dev.mysql.com/downloads/mysql/).
+
+2. Create a database named `review_summarizer` (or update the database name in the connection URL as needed).
+
+3. Copy the example environment file and configure the database URL:
+
+    ```bash
+    cd packages/server
+    cp .env.example .env
+    ```
+
+    Edit `.env` to match your MySQL setup. The default configuration is:
+
+    ```
+    DATABASE_URL=mysql://root:password@localhost:3306/review_summarizer
+    ```
+
+    Replace `root`, `password`, `localhost`, and `3306` with your actual MySQL credentials and host/port if different.
+
+4. Run the Prisma migrations to set up the database schema:
+
+    ```bash
+    cd packages/server
+    bunx prisma migrate dev
+    ```
+
+5. Generate the Prisma client:
+    ```bash
+    bunx prisma generate
+    ```
+
+## Running the Application
+
+To run the application (both client and server concurrently):
 
 ```bash
 bun run index.ts
