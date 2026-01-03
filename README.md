@@ -58,10 +58,15 @@ This project uses MySQL as the database and Prisma as the ORM.
 
 2. Create a database named `review_summarizer` (or update the database name in the connection URL as needed).
 
-3. Copy the example environment file and configure the database URL:
+3. Copy the example environment file and configure the database URL. First, navigate to the server directory:
 
     ```bash
     cd packages/server
+    ```
+
+    Then, copy the environment file:
+
+    ```bash
     cp .env.example .env
     ```
 
@@ -73,14 +78,14 @@ This project uses MySQL as the database and Prisma as the ORM.
 
     Replace `root`, `password`, `localhost`, and `3306` with your actual MySQL credentials and host/port if different.
 
-4. Run the Prisma migrations to set up the database schema:
+4. Run the Prisma migrations to set up the database schema (from the `packages/server` directory):
 
     ```bash
-    cd packages/server
     bunx prisma migrate dev
     ```
 
-5. Generate the Prisma client:
+5. Generate the Prisma client (from the `packages/server` directory):
+
     ```bash
     bunx prisma generate
     ```
