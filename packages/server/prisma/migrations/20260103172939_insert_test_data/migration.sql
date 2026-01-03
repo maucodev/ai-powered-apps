@@ -1,0 +1,37 @@
+INSERT INTO products (id, name, description, price) VALUES
+(1, 'Wireless Noise-Cancelling Headphones', 'Premium over-ear headphones with active noise cancellation and 30 hours of battery life.', 299.99),
+(2, 'Smartwatch Pro X', 'Advanced smartwatch with fitness tracking, GPS, and heart rate monitoring.', 199.50),
+(3, '4K Ultra HD Smart TV 55"', '55-inch smart television with HDR support and built-in streaming apps.', 649.00),
+(4, 'Espresso Machine Deluxe', 'High-pressure espresso machine with milk frother for café-quality drinks at home.', 349.95),
+(5, 'Ergonomic Office Chair', 'Adjustable office chair with lumbar support and breathable mesh back.', 179.00);
+
+INSERT INTO reviews (author, rating, content, createdAt, productId) VALUES
+('Alice Johnson', 5, 'These headphones completely transformed my daily commute. The noise cancellation is phenomenal, blocking out train noise almost entirely. The sound quality is rich with deep bass and crisp highs. I can wear them for hours without discomfort thanks to the plush padding. Battery easily lasts me an entire week of use. Worth every penny.', NOW(), 1),
+('Mark Thompson', 4, 'I have been using these headphones at work and they help me focus by drowning out chatter. The controls are intuitive and the Bluetooth connection is stable. I only wish the case was a bit smaller for travel, but otherwise these are excellent headphones.', NOW(), 1),
+('Sophie Williams', 5, 'As someone who flies often, these headphones are a lifesaver. I barely notice the plane engine noise anymore, and I can actually enjoy movies in peace. The design feels premium and sturdy, and pairing with multiple devices is seamless.', NOW(), 1),
+('David Brown', 4, 'The soundstage is impressive, making music and podcasts immersive. Noise cancellation is strong but sometimes introduces slight pressure in the ears. Still, for the price, these headphones deliver professional-level performance.', NOW(), 1),
+('Emily Carter', 5, 'I was hesitant at first, but after using them for a week I am blown away. I can work in noisy cafés without any distraction. Calls are clear and the microphone quality is surprisingly good. Definitely recommend.', NOW(), 1),
+
+('Lucas Green', 5, 'The Smartwatch Pro X has exceeded my expectations. The step tracking and GPS are very accurate, and I love how it monitors my heart rate continuously. Notifications sync perfectly with my phone, and the battery lasts almost three days with regular use.', NOW(), 2),
+('Olivia Martinez', 4, 'I primarily use it for workouts, and the detailed activity tracking is very motivating. The watch feels comfortable even during long runs. The only downside is that charging takes slightly longer than I expected, but overall it’s fantastic.', NOW(), 2),
+('Daniel Harris', 5, 'Stylish design with a sharp, bright screen. I like how customizable the watch faces are. It integrates seamlessly with my calendar and reminders, helping me stay organized. Easily the best smartwatch I have owned so far.', NOW(), 2),
+('Sophia Lee', 4, 'This watch is packed with features. Sleep tracking is detailed and gives me good insights. It is also waterproof, so I can swim with it. My only complaint is that some third-party apps are limited, but for fitness and lifestyle, it’s perfect.', NOW(), 2),
+('James Walker', 5, 'I bought this for my wife and she loves it. She uses it for workouts, notifications, and even music control. The build feels premium and durable. The strap is soft and doesn’t irritate the skin. Highly recommended.', NOW(), 2),
+
+('Michael Scott', 5, 'The picture quality on this TV is absolutely stunning. Colors are vibrant, blacks are deep, and the HDR support makes movies look incredible. Streaming apps load quickly and the interface is smooth. Gaming on this screen is a joy with low input lag.', NOW(), 3),
+('Rachel Adams', 4, 'Setup was simple and the TV connected to Wi-Fi instantly. The sound is decent for built-in speakers, but I paired it with a soundbar for a more cinematic experience. For the price, this 55-inch TV is a fantastic value.', NOW(), 3),
+('Tom Hughes', 5, 'I use this TV every evening and it never disappoints. The remote is responsive, and voice control works flawlessly. Watching sports is so immersive thanks to the fast refresh rate. The slim design also looks beautiful in my living room.', NOW(), 3),
+('Emma Wilson', 4, 'The smart features are intuitive and easy to navigate. Netflix and YouTube run without hiccups. The brightness levels are great even in daylight. I just wish the stand was a bit sturdier, but wall mounting solved that issue.', NOW(), 3),
+('Chris Evans', 5, 'Crisp resolution and wide viewing angles make this TV perfect for family movie nights. Everyone can see clearly no matter where they sit. I am very impressed with the overall build quality and performance.', NOW(), 3),
+
+('Sarah Mitchell', 5, 'This espresso machine makes café-quality drinks right at home. The pressure system creates rich, flavorful shots with beautiful crema. The milk frother is powerful, and I’ve mastered lattes and cappuccinos. It looks sleek on the counter as well.', NOW(), 4),
+('John Baker', 4, 'I love having fresh espresso every morning. The machine heats up quickly and the controls are straightforward. Cleaning requires a bit of attention, but that’s normal for espresso machines. It’s a solid investment for coffee lovers.', NOW(), 4),
+('Laura White', 5, 'I am blown away by how consistent this machine is. Every cup tastes perfect. The frother makes silky smooth foam for my cappuccinos. Friends and family are impressed when I serve them coffee from this machine.', NOW(), 4),
+('Peter Roberts', 4, 'The design is modern and fits well in my kitchen. It takes a little practice to get the grind and tamp right, but once you do, the espresso is delicious. It feels durable and well-built.', NOW(), 4),
+('Anna Collins', 5, 'This is easily the best purchase I made this year. I no longer need to spend money at cafés. The espresso is rich and bold, and the milk frother works like a charm. Highly recommended for anyone who loves coffee.', NOW(), 4),
+
+('William Turner', 5, 'This office chair is incredibly comfortable. The lumbar support keeps my back pain-free during long workdays. The mesh back is breathable and prevents overheating. Adjustability is excellent, allowing me to find the perfect position.', NOW(), 5),
+('Natalie King', 4, 'Assembly was straightforward and took me less than 30 minutes. The chair feels sturdy and supportive. I wish the armrests had a bit more padding, but otherwise it’s fantastic for the price.', NOW(), 5),
+('Andrew Scott', 5, 'I have been working from home for over a year, and this chair has been a game-changer. The seat cushion is firm but comfortable, and I can sit for hours without discomfort. The ergonomic design really makes a difference.', NOW(), 5),
+('Grace Young', 4, 'The chair provides excellent support for my posture. I feel less fatigued at the end of the day. The wheels roll smoothly on both carpet and hardwood. A little more cushioning on the seat would make it perfect.', NOW(), 5),
+('Henry Lopez', 5, 'This chair exceeded my expectations. It feels premium, adjusts easily, and provides fantastic back support. The breathable mesh is perfect for hot days. I would definitely buy it again.', NOW(), 5);
