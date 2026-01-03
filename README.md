@@ -20,10 +20,16 @@ A full-stack application developed as part of [Mosh Hamedani's course on buildin
 
 ## Prerequisites
 
+This project was created using `bun init` in bun v1.2.21. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+
 Before running the application, ensure you have the following:
 
+- **Bun Runtime**: This project uses Bun as the JavaScript runtime and package manager. Download and install it from [Bun's official website](https://bun.sh).
+
 - **MySQL Database**: As described in the Database Setup section below.
+
 - **OpenAI API Key**: Required for the chatbot functionality. Obtain a key from [OpenAI's website](https://platform.openai.com/api-keys) and add it to the `.env` file in the `packages/server` directory as `OPENAI_API_KEY=your_api_key_here`.
+
 - **Hugging Face API Token**: Required for the review summarizer feature using open-source models. Get a token from [Hugging Face](https://huggingface.co/settings/tokens) and add it to the `.env` file in the `packages/server` directory as `HUGGINGFACE_API_TOKEN=your_token_here`.
 
 ## Installation
@@ -76,8 +82,6 @@ To run the application (both client and server concurrently), execute the follow
 ```bash
 bun run index.ts
 ```
-
-This project was created using `bun init` in bun v1.2.21. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
 
 ## Screenshots
 
