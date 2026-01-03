@@ -2,11 +2,11 @@ import fs from 'fs';
 import path from 'path';
 
 import { conversationRespository } from '../repositories/conversation.repository';
-import template from '../prompts/chatbox.txt';
+import template from '../llm/prompts/chatbox.txt';
 import { llmClient } from '../llm/client';
 
 const parkInfo = fs.readFileSync(
-    path.join(__dirname, '..', 'prompts', 'WonderWorld.md'),
+    path.join(__dirname, '..', 'llm', 'prompts', 'WonderWorld.md'),
     'utf-8'
 );
 

@@ -4,9 +4,9 @@ A full-stack application developed as part of [Mosh Hamedani's course on buildin
 
 ## Features
 
-- **Chatbot**: An interactive chatbot designed for an imaginary theme park, providing instant answers to visitor queries such as ride recommendations for kids, food options, and park hours. Built with a clean architecture backend and a responsive frontend.
+- **Chatbot**: An interactive chatbot designed for an imaginary theme park, providing instant answers to visitor queries such as ride recommendations for kids, food options, and park hours. Powered by OpenAI's API for intelligent responses. Built with a clean architecture backend and a responsive frontend.
 
-- **Review Summarizer**: A tool that analyzes and condenses customer reviews into concise, actionable insights, helping users make informed decisions quickly.
+- **Review Summarizer**: A tool that analyzes and condenses customer reviews into concise, actionable insights, helping users make informed decisions quickly. Utilizes open-source models from Hugging Face for summarization.
 
 ## Technologies Used
 
@@ -22,7 +22,8 @@ A full-stack application developed as part of [Mosh Hamedani's course on buildin
 Before running the application, ensure you have the following:
 
 - **MySQL Database**: As described in the Database Setup section below.
-- **OpenAI API Key**: This project uses OpenAI's API for AI-powered features. You need a valid OpenAI API key with sufficient credits. Obtain one from [OpenAI's website](https://platform.openai.com/api-keys). Add it to the `.env` file in the `packages/server` directory as `OPENAI_API_KEY=your_api_key_here`.
+- **OpenAI API Key**: Required for the chatbot functionality. Obtain a key from [OpenAI's website](https://platform.openai.com/api-keys) and add it to the `.env` file in the `packages/server` directory as `OPENAI_API_KEY=your_api_key_here`.
+- **Hugging Face API Token**: Required for the review summarizer feature using open-source models. Get a token from [Hugging Face](https://huggingface.co/settings/tokens) and add it to the `.env` file in the `packages/server` directory as `HUGGINGFACE_API_TOKEN=your_token_here`.
 
 ## Installation
 
