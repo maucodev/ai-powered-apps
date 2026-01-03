@@ -17,6 +17,13 @@ A full-stack application developed as part of [Mosh Hamedani's course on buildin
 - Hugging Face and Ollama (for integrating open-source LLMs)
 - Prompt engineering techniques for effective AI interactions
 
+## Prerequisites
+
+Before running the application, ensure you have the following:
+
+- **MySQL Database**: As described in the Database Setup section below.
+- **OpenAI API Key**: This project uses OpenAI's API for AI-powered features. You need a valid OpenAI API key with sufficient credits. Obtain one from [OpenAI's website](https://platform.openai.com/api-keys). Add it to the `.env` file in the `packages/server` directory as `OPENAI_API_KEY=your_api_key_here`.
+
 ## Installation
 
 To install dependencies:
