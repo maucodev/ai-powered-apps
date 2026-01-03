@@ -76,3 +76,15 @@ bun run index.ts
 ```
 
 This project was created using `bun init` in bun v1.2.21. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+
+## Screenshots
+
+![AI-Powered Apps Screenshot](screenshots/home.jpg)
+
+![AI-Powered Apps Screenshot](screenshots/chatbot.jpg)
+
+![AI-Powered Apps Screenshot](screenshots/summarize-01.jpg)
+
+![AI-Powered Apps Screenshot](screenshots/summarize-02.jpg)
+
+![AI-Powered Apps Screenshot](screenshots/summarize-03.jpg)
