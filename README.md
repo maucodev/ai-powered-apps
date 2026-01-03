@@ -2,6 +2,16 @@
 
 A full-stack application developed as part of [Mosh Hamedani's course on building AI-powered apps](https://codewithmosh.com/p/build-ai-powered-apps). This project demonstrates the integration of Large Language Models (LLMs) with modern web technologies to create practical AI features.
 
+## Table of Contents
+
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Database Setup](#database-setup)
+- [Running the Application](#running-the-application)
+- [Screenshots](#screenshots)
+
 ## Features
 
 - **Chatbot**: An interactive chatbot designed for an imaginary theme park, providing instant answers to visitor queries such as ride recommendations for kids, food options, and park hours. Powered by OpenAI's API for intelligent responses. Built with a clean architecture backend and a responsive frontend.
