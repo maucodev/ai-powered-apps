@@ -14,7 +14,8 @@ A full-stack application developed as part of [Mosh Hamedani's course on buildin
 - Tailwind CSS (styling)
 - shadcn/ui (UI components)
 - Prisma (database ORM)
-- Hugging Face and Ollama (for integrating open-source LLMs)
+- OpenAI (for chatbot AI responses)
+- Hugging Face and Ollama (for review summarization using open-source LLMs)
 - Prompt engineering techniques for effective AI interactions
 
 ## Prerequisites
