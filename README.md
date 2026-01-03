@@ -62,7 +62,7 @@ This project uses MySQL as the database and Prisma as the ORM.
 
 ## Running the Application
 
-To run the application (both client and server concurrently):
+To run the application (both client and server concurrently), execute the following command from the **root directory** of the project:
 
 ```bash
 bun run index.ts
